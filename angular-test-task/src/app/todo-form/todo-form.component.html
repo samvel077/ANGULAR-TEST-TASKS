@@ -1,0 +1,35 @@
+<div [@openClose]="open && todoService.todos.length ? 'open' : 'closed'">
+   <mat-card class="drop-down">
+      <div>
+         <span>Count of Tasks: {{todoService.todos.length}} tasks</span>
+         <mat-icon (click)="open = false">keyboard_arrow_up</mat-icon>
+      </div>
+   </mat-card>
+
+   <mat-card class="container">
+      <mat-form-field class="example-full-width">
+         <mat-label>Task description</mat-label>
+         <input matInput (keyup.enter)="addTodo()" [(ngModel)]="title">
+      </mat-form-field>
+
+      <button 
+         mat-raised-button 
+         color="primary" 
+         [disabled]="title.trim().length | titleValidation"
+         (click)="addTodo()"
+      >
+         Add
+      </button>
+         
+      <button 
+         mat-raised-button 
+         color="primary" 
+         (click)="open = true" 
+         *ngIf="!open && todoService.todos.length"
+      >
+         Show count
+      </button>
+   </mat-card>
+
+   <app-todo></app-todo>
+</div>

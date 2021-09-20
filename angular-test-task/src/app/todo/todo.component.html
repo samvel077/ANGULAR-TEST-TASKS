@@ -1,0 +1,6 @@
+<div class="conteiner" *ngFor="let todo of todoService.todos">
+   <mat-card class="todo">
+      <mat-icon aria-hidden="false" (click)="removeTodo(todo.id)">clear</mat-icon>
+      <span class="title">{{todo.title}}</span>
+   </mat-card>
+</div>

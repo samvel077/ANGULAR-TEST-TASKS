@@ -1,0 +1,19 @@
+.conteiner {
+   padding-top: 7px;
+
+   .todo {
+      display: flex;
+      align-items: center;
+      box-shadow:  5px 10px 18px #888888;
+
+      span {
+         font-size: 20px;
+      }
+
+      mat-icon {
+         padding: 0px 5px;
+         color: red;
+         cursor: pointer;
+      }
+   }
+}
